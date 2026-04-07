@@ -717,6 +717,7 @@ phutil_register_library_map(array(
     'DifferentialTestPlanCommitMessageField' => 'applications/differential/field/DifferentialTestPlanCommitMessageField.php',
     'DifferentialTestPlanField' => 'applications/differential/customfield/DifferentialTestPlanField.php',
     'DifferentialTitleCommitMessageField' => 'applications/differential/field/DifferentialTitleCommitMessageField.php',
+    'DifferentialTitleField' => 'applications/differential/customfield/DifferentialTitleField.php',
     'DifferentialTransaction' => 'applications/differential/storage/DifferentialTransaction.php',
     'DifferentialTransactionComment' => 'applications/differential/storage/DifferentialTransactionComment.php',
     'DifferentialTransactionEditor' => 'applications/differential/editor/DifferentialTransactionEditor.php',
@@ -6789,6 +6790,7 @@ phutil_register_library_map(array(
     'DifferentialTestPlanCommitMessageField' => 'DifferentialCommitMessageField',
     'DifferentialTestPlanField' => 'DifferentialCoreCustomField',
     'DifferentialTitleCommitMessageField' => 'DifferentialCommitMessageField',
+    'DifferentialTitleField' => 'DifferentialCoreCustomField',
     'DifferentialTransaction' => 'PhabricatorModularTransaction',
     'DifferentialTransactionComment' => array(
       'PhabricatorApplicationTransactionComment',
