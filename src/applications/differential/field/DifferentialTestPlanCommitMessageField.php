@@ -15,6 +15,7 @@ final class DifferentialTestPlanCommitMessageField
 
   public function getFieldAliases() {
     return array(
+      'Test',
       'Testplan',
       'Tested',
       'Tests',

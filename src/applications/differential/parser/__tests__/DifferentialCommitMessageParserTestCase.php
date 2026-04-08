@@ -71,6 +71,36 @@ EOMESSAGE;
     $this->assertEqual($expect, $actual);
   }
 
+  public function testDifferentialCommitMessageFieldAliases() {
+    $message = <<<EOMESSAGE
+This is the title.
+
+TEST: This is the test plan.
+EOMESSAGE;
+
+    $fields = array(
+      new DifferentialTitleCommitMessageField(),
+      new DifferentialSummaryCommitMessageField(),
+      new DifferentialTestPlanCommitMessageField(),
+    );
+
+    $expect = array(
+      DifferentialTitleCommitMessageField::FIELDKEY =>
+        'This is the title.',
+      DifferentialTestPlanCommitMessageField::FIELDKEY =>
+        'This is the test plan.',
+    );
+
+    $parser = id(new DifferentialCommitMessageParser())
+      ->setCommitMessageFields($fields)
+      ->setTitleKey(DifferentialTitleCommitMessageField::FIELDKEY)
+      ->setSummaryKey(DifferentialSummaryCommitMessageField::FIELDKEY);
+
+    $actual = $parser->parseFields($message);
+
+    $this->assertEqual($expect, $actual);
+  }
+
   public function testDifferentialCommitMessageParserNormalization() {
     $map = array(
       'Test Plan' => 'test plan',
